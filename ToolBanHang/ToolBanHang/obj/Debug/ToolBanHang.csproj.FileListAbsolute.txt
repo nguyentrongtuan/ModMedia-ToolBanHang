@@ -20,3 +20,26 @@ F:\Project_c#\Tool ban hang Mod Media\ModMedia-ToolBanHang\ToolBanHang\ToolBanHa
 F:\Project_c#\Tool ban hang Mod Media\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\ToolBanHang.csproj.CopyComplete
 F:\Project_c#\Tool ban hang Mod Media\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\ToolBanHang.exe
 F:\Project_c#\Tool ban hang Mod Media\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\ToolBanHang.pdb
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\bin\Debug\ToolBanHang.exe.config
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\bin\Debug\ToolBanHang.exe
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\bin\Debug\ToolBanHang.pdb
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\bin\Debug\MaterialDesignColors.dll
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\bin\Debug\MaterialDesignColors.pdb
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\ToolBanHang.csproj.AssemblyReference.cache
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\MainWindow.g.cs
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\App.g.cs
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\ToolBanHang_MarkupCompile.cache
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\ToolBanHang_MarkupCompile.lref
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\App.baml
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\MainWindow.baml
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\ResourceXAML\MainResource.baml
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\ToolBanHang.g.resources
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\ToolBanHang.Properties.Resources.resources
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\ToolBanHang.csproj.GenerateResource.cache
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\ToolBanHang.csproj.CoreCompileInputs.cache
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\ToolBanHang.exe
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\ToolBanHang.pdb

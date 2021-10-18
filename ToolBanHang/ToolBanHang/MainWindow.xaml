@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToolBanHang"
-      
+        
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -14,40 +14,68 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
+        DataContext="{StaticResource MainVM}"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="80*"/>
             <RowDefinition Height="339*"/>
         </Grid.RowDefinitions>
-        <ComboBox HorizontalAlignment="Left" Margin="140,22,0,0" VerticalAlignment="Top" Width="642" >
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid Width="500">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="Col A"></TextBlock>
-                        <TextBlock Grid.Column="1" Text="Col B"></TextBlock>
-                    </Grid>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
-        <Label Content="ComboBox" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.893,0.337" Width="114"/>
-        <ListView Margin="10,66,10,72" Name="ListView1" Grid.RowSpan="2">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Col1" Width="120" DisplayMemberBinding="{Binding Col1}" />
-                    <GridViewColumn Header="Col2" Width="120" DisplayMemberBinding="{Binding Col2}" />
-                    <GridViewColumn Header="Col3" Width="150" DisplayMemberBinding="{Binding Col3}" />
-                    <GridViewColumn Header="Col4" Width="120" DisplayMemberBinding="{Binding Col4}" />
-                    <GridViewColumn Header="Col5" Width="120" DisplayMemberBinding="{Binding Col5}" />
-                    <GridViewColumn Header="Col6" Width="150" DisplayMemberBinding="{Binding Col6}" />
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <Grid>
+            <ComboBox HorizontalAlignment="Left" Margin="140,22,0,0" VerticalAlignment="Top" Width="642" >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="500">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="Col A"></TextBlock>
+                            <TextBlock Grid.Column="1" Text="Col B"></TextBlock>
+                        </Grid>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Label Content="ComboBox" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.893,0.337" Width="114"/>
+        </Grid>
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel Margin="10,0,10,70">
+                <Grid>
+                    <ListView Name="ListView1" Grid.RowSpan="2">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Col1" Width="120" DisplayMemberBinding="{Binding Col1}" />
+                                <GridViewColumn Header="Col2" Width="120" DisplayMemberBinding="{Binding Col2}" />
+                                <GridViewColumn Header="Col3" Width="150" DisplayMemberBinding="{Binding Col3}" />
+                                <GridViewColumn Header="Col4" Width="120" DisplayMemberBinding="{Binding Col4}" />
+                                <GridViewColumn Header="Col5" Width="120" DisplayMemberBinding="{Binding Col5}" />
+                                <GridViewColumn Header="Col6" Width="150" DisplayMemberBinding="{Binding Col6}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+                <Grid>
+                    <ListView  Name="ListView2" Grid.RowSpan="2">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Col1" Width="120" DisplayMemberBinding="{Binding Col1}" />
+                                <GridViewColumn Header="Col2" Width="120" DisplayMemberBinding="{Binding Col2}" />
+                                <GridViewColumn Header="Col3" Width="150" DisplayMemberBinding="{Binding Col3}" />
+                                <GridViewColumn Header="Col4" Width="120" DisplayMemberBinding="{Binding Col4}" />
+                                <GridViewColumn Header="Col5" Width="120" DisplayMemberBinding="{Binding Col5}" />
+                                <GridViewColumn Header="Col6" Width="150" DisplayMemberBinding="{Binding Col6}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </StackPanel>
+        </Grid>
+
+
+
         <Button Content="Button" HorizontalAlignment="Left" Margin="581,286,0,0" VerticalAlignment="Top" Width="201" Height="43" Grid.Row="1"/>
+        <Button Content="Tao Bang" HorizontalAlignment="Left" Margin="10,291,0,0" Grid.Row="1" VerticalAlignment="Top" Width="93"/>
 
     </Grid>
 </Window>
