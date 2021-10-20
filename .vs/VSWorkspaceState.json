@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ToolBanHang",
+    "\\ToolBanHang\\ToolBanHang",
+    "\\ToolBanHang\\ToolBanHang\\ViewModel"
   ],
-  "SelectedNode": "\\ToolBanHang.sln",
+  "SelectedNode": "\\ToolBanHang\\ToolBanHang\\MainWindow.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

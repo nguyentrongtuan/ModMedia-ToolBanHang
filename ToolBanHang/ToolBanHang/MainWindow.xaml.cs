@@ -42,12 +42,13 @@ namespace ToolBanHang
         {
             InitializeComponent();
 
-            
+            Binding myBinding = new Binding();
+            myBinding.Source = this.ViewModel;
+            myBinding.Path = new PropertyPath("TestCM");
+            BindingOperations.SetBinding(MainWindow.BtnTest, Button.CommandProperty, myBinding);
+           
         }
 
-
-
-        
 
         private void Button_Create_ListView_Click(object sender, RoutedEventArgs e)
         {
@@ -63,18 +64,18 @@ namespace ToolBanHang
 
 
             ListView listView = new ListView();
-            listView.Name = "ListView_"+ listview_id.ToString();
+            listView.Name = "ListView_" + listview_id.ToString();
 
 
             List_ListView.Add(1);
 
             var gridView = new GridView();
             listView.View = gridView;
-            
+
             listView.Name = "ListView_" + listview_id.ToString();
             listView.Margin = new System.Windows.Thickness { Top = MyControl1.Height, Left = 0, Right = 0, Bottom = 0 };
 
-            
+
 
 
             gridView.Columns.Add(new GridViewColumn
@@ -95,13 +96,36 @@ namespace ToolBanHang
             items.Add(new ItemDemo() { Col1 = "Jane Doe Col2 " + listview_id.ToString(), Col2 = "jane@doe-family2.com" });
             listView.ItemsSource = items;
 
+
+
             Grid grid = new Grid();
             grid.Margin = new System.Windows.Thickness { Top = 35, Left = 0, Right = 0, Bottom = 0 };
             grid.Children.Add(listView);
             grid.Children.Add(MyControl1);
             grid.Name = "grid_listview_" + listview_id.ToString();
 
+
+            // tạo contextMenu
+            ContextMenu contextMenu = new ContextMenu();
+            contextMenu.Width = 500;
+
+
+            MenuItem cm_item_1 = new MenuItem();
+            cm_item_1.Header = "Menu 1";
+            // cm_item_1.Command = "{Binding TestCM}";
+            
+            // cm_item_1.Click += item_Click;
+
+            MenuItem cm_item_2 = new MenuItem();
+            cm_item_2.Header = "Menu 2";
+            // cm_item_2.Click += item_Click;
+            
+            contextMenu.Items.Add(cm_item_1);
+            grid.ContextMenu = contextMenu;
+
             StackPanel_1.Children.Add(grid);
+
+
 
         }
 

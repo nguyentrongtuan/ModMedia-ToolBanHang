@@ -16,61 +16,61 @@
         mc:Ignorable="d"
         DataContext="{StaticResource MainVM}"
         Title="MainWindow" Height="713.154" Width="971.428">
-    <Grid Margin="0" Width="961">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="80*"/>
-            <RowDefinition Height="339*"/>
-        </Grid.RowDefinitions>
-        <Grid>
-            <ComboBox HorizontalAlignment="Left" Margin="140,22,0,0" VerticalAlignment="Top" Width="642" >
-                <ComboBox.ItemTemplate>
-                    <DataTemplate>
-                        <Grid Width="500">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Text="Col A"></TextBlock>
-                            <TextBlock Grid.Column="1" Text="Col B"></TextBlock>
-                        </Grid>
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-            </ComboBox>
-            <Label Content="ComboBox" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.893,0.337" Width="114"/>
-        </Grid>
+	<Grid Margin="0" Width="961">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="80*"/>
+			<RowDefinition Height="339*"/>
+		</Grid.RowDefinitions>
+		<Grid>
+			<ComboBox HorizontalAlignment="Left" Margin="140,22,0,0" VerticalAlignment="Top" Width="642" >
+				<ComboBox.ItemTemplate>
+					<DataTemplate>
+						<Grid Width="500">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition></ColumnDefinition>
+								<ColumnDefinition></ColumnDefinition>
+							</Grid.ColumnDefinitions>
+							<TextBlock Grid.Column="0" Text="Col A"></TextBlock>
+							<TextBlock Grid.Column="1" Text="Col B"></TextBlock>
+						</Grid>
+					</DataTemplate>
+				</ComboBox.ItemTemplate>
+			</ComboBox>
+			<Label Content="ComboBox" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.893,0.337" Width="114"/>
+		</Grid>
 
 
 
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,10,107" >
-            <ScrollViewer VerticalScrollBarVisibility="Auto" >
-                <StackPanel Margin="10,0,10,70" Name="StackPanel_1">
+		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,10,107" >
+			<ScrollViewer VerticalScrollBarVisibility="Auto" >
+				<StackPanel Margin="10,0,10,70" Name="StackPanel_1">
 
-                    <Grid Name="gridMain" Margin="0,35,0,0">
-                        <Button Content="Button" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Height="30"/>
-                        <ListView Margin="0,30,0,0" Name="ListView_demo">
-                            <ListView.View>
-                                <GridView>
-                                    <GridViewColumn Header="Col1" Width="120" DisplayMemberBinding="{Binding Col1}" />
-                                    <GridViewColumn Header="Col2" Width="120" DisplayMemberBinding="{Binding Col2}" />
-                                </GridView>
-                            </ListView.View>
-                            
-                        </ListView>
+					<Grid Name="gridMain" Margin="0,35,0,0">
+						<Button Content="Button" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Height="30"/>
+						<ListView Margin="0,30,0,0" Name="ListView_demo">
+							<ListView.View>
+								<GridView>
+									<GridViewColumn Header="Col1" Width="120" DisplayMemberBinding="{Binding Col1}" />
+									<GridViewColumn Header="Col2" Width="120" DisplayMemberBinding="{Binding Col2}" />
+								</GridView>
+							</ListView.View>
 
-                    </Grid>
-                </StackPanel>
-            </ScrollViewer>
+						</ListView>
 
-        </Grid>
-        <Grid HorizontalAlignment="Left" Height="85" Margin="10,443,0,0" Grid.Row="1" VerticalAlignment="Top" Width="941">
-            <Button Content="Button" HorizontalAlignment="Left" Margin="730,18,0,0" VerticalAlignment="Top" Width="201" Height="42"/>
-            <Button Content="Tao Bang" HorizontalAlignment="Left" Margin="10,18,0,25" Width="108" Click="Button_Create_ListView_Click" VerticalContentAlignment="Center" Height="Auto" HorizontalContentAlignment="Left" VerticalAlignment="Center"/>
-        </Grid>
-        
+					</Grid>
+				</StackPanel>
+			</ScrollViewer>
 
+		</Grid>
+		<Grid HorizontalAlignment="Left" Height="85" Margin="10,443,0,0" Grid.Row="1" VerticalAlignment="Top" Width="941">
+			<Button Content="Button" Name="BtnTest" HorizontalAlignment="Left" Margin="730,18,0,0" VerticalAlignment="Top" Width="201" Height="42"/>
+			<Button Content="Tao Bang" HorizontalAlignment="Left" Margin="10,18,0,25" Width="108" Click="Button_Create_ListView_Click" VerticalContentAlignment="Center" Height="Auto" HorizontalContentAlignment="Left" VerticalAlignment="Center"/>
+		</Grid>
 
 
 
 
-    </Grid>
+
+
+	</Grid>
 </Window>
