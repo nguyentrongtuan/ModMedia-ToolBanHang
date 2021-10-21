@@ -36,10 +36,11 @@ C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\De
 C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\ToolBanHang_MarkupCompile.lref
 C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\App.baml
 C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\MainWindow.baml
-C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\ResourceXAML\MainResource.baml
 C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\ToolBanHang.g.resources
 C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\ToolBanHang.Properties.Resources.resources
 C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\ToolBanHang.csproj.GenerateResource.cache
 C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\ToolBanHang.csproj.CoreCompileInputs.cache
 C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\ToolBanHang.exe
 C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\ToolBanHang.pdb
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\bin\Debug\Template.dll
+C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\bin\Debug\Template.pdb

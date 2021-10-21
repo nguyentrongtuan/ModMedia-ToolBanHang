@@ -3,8 +3,9 @@
     "",
     "\\ToolBanHang",
     "\\ToolBanHang\\ToolBanHang",
+    "\\ToolBanHang\\ToolBanHang\\ResourceXAML",
     "\\ToolBanHang\\ToolBanHang\\ViewModel"
   ],
-  "SelectedNode": "\\ToolBanHang\\ToolBanHang\\MainWindow.xaml.cs",
+  "SelectedNode": "\\ToolBanHang\\ToolBanHang.sln",
   "PreviewInSolutionExplorer": false
 }

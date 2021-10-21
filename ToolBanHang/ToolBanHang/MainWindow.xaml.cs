@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using ToolBanHang.ViewModel;
 namespace ToolBanHang
 {
     /// <summary>
@@ -41,12 +41,6 @@ namespace ToolBanHang
         public MainWindow()
         {
             InitializeComponent();
-
-            Binding myBinding = new Binding();
-            myBinding.Source = this.ViewModel;
-            myBinding.Path = new PropertyPath("TestCM");
-            BindingOperations.SetBinding(MainWindow.BtnTest, Button.CommandProperty, myBinding);
-           
         }
 
 
@@ -103,7 +97,7 @@ namespace ToolBanHang
             grid.Children.Add(listView);
             grid.Children.Add(MyControl1);
             grid.Name = "grid_listview_" + listview_id.ToString();
-
+            // grid.CommandBindings = new CommandBinding(;
 
             // tạo contextMenu
             ContextMenu contextMenu = new ContextMenu();
@@ -112,27 +106,25 @@ namespace ToolBanHang
 
             MenuItem cm_item_1 = new MenuItem();
             cm_item_1.Header = "Menu 1";
-            // cm_item_1.Command = "{Binding TestCM}";
             
             // cm_item_1.Click += item_Click;
 
             MenuItem cm_item_2 = new MenuItem();
             cm_item_2.Header = "Menu 2";
+            // cm_item_2.Comm
             // cm_item_2.Click += item_Click;
             
             contextMenu.Items.Add(cm_item_1);
             grid.ContextMenu = contextMenu;
 
-            StackPanel_1.Children.Add(grid);
-
-
+            // StackPanel_1.Children.Add(grid);
 
         }
 
         private void Click_delete_ListView(object sender, EventArgs e)
         {
             FrameworkElement parent = (FrameworkElement)((Button)sender).Parent;
-            StackPanel_1.Children.RemoveAt(StackPanel_1.Children.IndexOf(parent));
+            // StackPanel_1.Children.RemoveAt(StackPanel_1.Children.IndexOf(parent));
         }
 
     }
