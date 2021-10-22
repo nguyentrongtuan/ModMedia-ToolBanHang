@@ -23,28 +23,48 @@ namespace ToolBanHang.ViewModel
         {
             CmBtnCreateListView = new DelegateCommand(() =>
             {
-                ListTable.Add(new ListTable
+
+                ListTableInListBox.Add(new ListTableInListBox
                 {
-                    col1 = "Nội dung 1",
-                    col2 = "Nội dung 2"
+                    col1 = "Header Cột 2",
+                    col2 = "Header Cột 1",
+                    menu = new ContextMenuInListView
+                    {
+                        HeaderMenu = "Menu 1",
+                    }
                 });
+
+               
             });
 
-            BtnDeleteTable = new DelegateCommand<ListTable>((e) =>
+            BtnDeleteTable = new DelegateCommand<ListTableInListBox>((e) =>
             {
-                ListTable.Remove(e);
-                Debug.WriteLine("qwefqwejkf");
+                ListTableInListBox.Remove(e);
+            });
+
+            BtnMenu1 = new DelegateCommand<ListTableInListBox>((e) =>
+            {
+                Debug.WriteLine("aaaa");
             });
         }
 
-        private ObservableCollection<ListTable> _ListTable = new ObservableCollection<ListTable>();
+        private ObservableCollection<ListTableInListBox> _ListTableInListBox = new ObservableCollection<ListTableInListBox>();
 
-        public ObservableCollection<ListTable> ListTable
+        public ObservableCollection<ListTableInListBox> ListTableInListBox
         {
-            get => _ListTable; set => SetProperty(ref _ListTable, value);
+            get => _ListTableInListBox; set => SetProperty(ref _ListTableInListBox, value);
+        }
+
+        private ObservableCollection<ContextMenuInListView> _ContextMenuInListView = new ObservableCollection<ContextMenuInListView>();
+
+
+        public ObservableCollection<ContextMenuInListView> ContextMenuInListView
+        {
+            get => _ContextMenuInListView; set => SetProperty(ref _ContextMenuInListView, value);
         }
 
         public ICommand CmBtnCreateListView { get; set; }
         public ICommand BtnDeleteTable { get; set; }
+        public ICommand BtnMenu1 { get; set; }
     }
 }

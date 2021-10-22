@@ -47,7 +47,7 @@
 
 		<Grid Grid.Row="1" Margin="12,0,10,107" >
             <ScrollViewer VerticalScrollBarVisibility="Auto" >
-                <ListBox ItemsSource="{Binding ListTable, UpdateSourceTrigger=PropertyChanged}" x:Name="abc">
+                <ListBox ItemsSource="{Binding ListTableInListBox, UpdateSourceTrigger=PropertyChanged}" x:Name="ListBox_ListTable">
                     <ListBox.ItemContainerStyle>
                         <Style TargetType="ListBoxItem">
                             <Style.Triggers>
@@ -58,15 +58,22 @@
                         </Style>
                     </ListBox.ItemContainerStyle>
                     <ListBox.ItemTemplate>
+                        
                         <DataTemplate>
                             <StackPanel Margin="0,0,10,0" >
                                 <Grid Margin="0,35,0,0"  >
-                                    <Button Content="Xóa Bảng" Command="{Binding ElementName=abc, Path=DataContext.BtnDeleteTable}" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Height="30" CommandParameter="{Binding}"/>
+                                    <Button Content="Xóa Bảng" Command="{Binding ElementName=ListBox_ListTable, Path=DataContext.BtnDeleteTable}" CommandParameter="{Binding}" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Height="30" />
                                     <ListView Margin="0,30,0,0" >
+                                        <ListView.ContextMenu>
+                                            <ContextMenu>
+                                                <MenuItem Header="{Binding menu.HeaderMenu}" />
+                                                <Separator />
+                                            </ContextMenu>
+                                        </ListView.ContextMenu>
                                         <ListView.View>
                                             <GridView>
-                                                <GridViewColumn DisplayMemberBinding="{Binding col1,UpdateSourceTrigger=PropertyChanged}" Header="Col 1" Width="120" />
-                                                <GridViewColumn DisplayMemberBinding="{Binding col2,UpdateSourceTrigger=PropertyChanged}" Header="Col 2" Width="120" />
+                                                <GridViewColumn DisplayMemberBinding="{Binding content_col1, UpdateSourceTrigger=PropertyChanged}" Header="{Binding col1}" Width="150" />
+                                                <GridViewColumn DisplayMemberBinding="{Binding content_col1,UpdateSourceTrigger=PropertyChanged}" Header="{Binding col2}" Width="150" />
                                             </GridView>
                                         </ListView.View>
                                     </ListView>
