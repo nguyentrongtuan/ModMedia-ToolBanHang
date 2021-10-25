@@ -6,28 +6,35 @@ using System.Threading.Tasks;
 using Template.Base;
 using System.Windows.Input;
 using System.Diagnostics;
-using ToolBanHang.ViewModel;
+using ToolBanHang.ViewModels;
 using System.Windows;
 
 namespace ToolBanHang.Model
 {
-    class ContextMenuInListView:ViewModelBase
+    class ContextMenuInListView:MainWindowViewModel
     {
-        private string _HeaderMenu = "";
+        private string _HeaderMenu1 = "";
+        private string _HeaderMenu2 = "";
         public ContextMenuInListView()
         {
-            BtnMenu = new DelegateCommand<ContextMenuInListView>((e) =>
+
+            BtnMenu1 = new DelegateCommand<ListTableInListBox>((e) =>
             {
-                // Debug.WriteLine("wefuiwehfk");
-                MessageBox.Show("Menu 1");
+                Debug.WriteLine("wefuiwehfk");
+                MessageBox.Show(e.ContentInCol[0].ContentCol1);
+                // MessageBox.Show("menu 1");
             });
-           
         }
-        public string HeaderMenu
+        public string HeaderMenu1
         {
-            get => _HeaderMenu; set => SetProperty(ref _HeaderMenu, value);
+            get => _HeaderMenu1; set => SetProperty(ref _HeaderMenu1, value);
+        }
+        
+        public string HeaderMenu2
+        {
+            get => _HeaderMenu2; set => SetProperty(ref _HeaderMenu2, value);
         }
 
-        public ICommand BtnMenu { get; set; }
+        public ICommand BtnMenu1 { get; set; }
     }
 }

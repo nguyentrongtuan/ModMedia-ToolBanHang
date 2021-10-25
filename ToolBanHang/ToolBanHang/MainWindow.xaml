@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToolBanHang"
-        
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -14,89 +13,113 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="713.154" Width="971.428"
-        xmlns:viewmodel="clr-namespace:ToolBanHang.ViewModel">
+        Title="MainWindow" Height="297.154" Width="473.428"
+        xmlns:vms="clr-namespace:ToolBanHang.ViewModels">
     <Window.DataContext>
-        <viewmodel:MainWindowViewModel/>
+        <vms:MainWindowViewModel />
     </Window.DataContext>
-  
-    <Grid Margin="0" Width="961">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="80*"/>
-			<RowDefinition Height="339*"/>
-		</Grid.RowDefinitions>
-		<Grid>
-			<ComboBox HorizontalAlignment="Left" Margin="140,22,0,0" VerticalAlignment="Top" Width="642" >
-				<ComboBox.ItemTemplate>
-					<DataTemplate>
-						<Grid Width="500">
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition></ColumnDefinition>
-								<ColumnDefinition></ColumnDefinition>
-							</Grid.ColumnDefinitions>
-							<TextBlock Grid.Column="0" Text="Col A"></TextBlock>
-							<TextBlock Grid.Column="1" Text="Col B"></TextBlock>
-						</Grid>
-					</DataTemplate>
-				</ComboBox.ItemTemplate>
-			</ComboBox>
-			<Label Content="ComboBox" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.893,0.337" Width="114"/>
-		</Grid>
 
 
 
-		<Grid Grid.Row="1" Margin="12,0,10,107" >
-            <ScrollViewer VerticalScrollBarVisibility="Auto" >
-                <ListBox ItemsSource="{Binding ListTableInListBox, UpdateSourceTrigger=PropertyChanged}" x:Name="ListBox_ListTable">
-                    <ListBox.ItemContainerStyle>
-                        <Style TargetType="ListBoxItem">
-                            <Style.Triggers>
-                                <Trigger Property="Control.IsMouseOver" Value="False">
-                                    <Setter Property="Control.Background" Value="Transparent" />
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </ListBox.ItemContainerStyle>
-                    <ListBox.ItemTemplate>
-                        
-                        <DataTemplate>
-                            <StackPanel Margin="0,0,10,0" >
-                                <Grid Margin="0,35,0,0"  >
-                                    <Button Content="Xóa Bảng" Command="{Binding ElementName=ListBox_ListTable, Path=DataContext.BtnDeleteTable}" CommandParameter="{Binding}" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Height="30" />
-                                    <ListView Margin="0,30,0,0" >
-                                        <ListView.ContextMenu>
-                                            <ContextMenu>
-                                                <MenuItem Header="{Binding menu.HeaderMenu}" />
-                                                <Separator />
-                                            </ContextMenu>
-                                        </ListView.ContextMenu>
-                                        <ListView.View>
-                                            <GridView>
-                                                <GridViewColumn DisplayMemberBinding="{Binding content_col1, UpdateSourceTrigger=PropertyChanged}" Header="{Binding col1}" Width="150" />
-                                                <GridViewColumn DisplayMemberBinding="{Binding content_col1,UpdateSourceTrigger=PropertyChanged}" Header="{Binding col2}" Width="150" />
-                                            </GridView>
-                                        </ListView.View>
-                                    </ListView>
+    <Grid Margin="0,0,0,0" VerticalAlignment="Top">
 
-                                </Grid>
+        <TabControl HorizontalAlignment="Stretch" Width="auto" Margin="0,0,0,0" Height="auto" VerticalAlignment="Bottom">
+
+            <TabItem Header="Tab 1" Height="Auto" Margin="0" VerticalAlignment="Top">
+                <StackPanel Width="auto" Height="auto" Margin="0" VerticalAlignment="Top">
+                    <Grid Height="auto" VerticalAlignment="Top" Margin="0,0,0,0" Width="auto">
+                        <ComboBox Margin="124,18,0,78"  ItemsSource="{Binding MyComboBox}" HorizontalAlignment="Left" Width="auto" >
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Box11}"></TextBlock>
+                                        <TextBlock Margin="10" FontSize="8" Text="{Binding Box12}"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+
+                        <Label Content="ComboBox"  HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="114"/>
+                        <Button Command="{Binding BtnLoadComboBox}" HorizontalAlignment="right"  Content="Load ComboBox" Width="120" ></Button>
+                    </Grid>
 
 
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-                
+                    <Grid Margin="0,10,0,50" Height="auto" Width="auto">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" Width="auto" Margin="0,0,0,0" >
+                            <ListBox ItemsSource="{Binding ListTableInListBox, UpdateSourceTrigger=PropertyChanged}" x:Name="ListBox_ListTable" Height="auto" Width="auto" >
+                                <ListBox.ItemContainerStyle>
+                                    <Style TargetType="ListBoxItem">
+                                        <Style.Triggers>
+                                            <Trigger Property="Control.IsMouseOver" Value="False">
+                                                <Setter Property="Control.Background" Value="Transparent" />
+
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ListBox.ItemContainerStyle>
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Margin="0,0,10,0" Width="auto">
+                                            <Grid Margin="0,35,0,0"  Width="auto">
+                                                <StackPanel Orientation="Horizontal" Width="auto">
+                                                    <Button Content="Xóa Bảng" Command="{Binding ElementName=ListBox_ListTable, Path=DataContext.BtnDeleteTable}" CommandParameter="{Binding}" HorizontalAlignment="Right" VerticalAlignment="Top" Width="120" Height="30" />
+                                                    <Button Content="Thêm Hàng" Command="{Binding ElementName=ListBox_ListTable, Path=DataContext.BtnAddRowTable}" CommandParameter="{Binding}" HorizontalAlignment="Right" VerticalAlignment="Top" Width="120" Height="30" />
+
+                                                </StackPanel>
+
+
+                                                <ListView Margin="0,30,0,0" x:Name="ListViewContentInCol" ItemsSource="{Binding ContentInCol}" Width="auto">
+
+
+                                                    <ListView.ContextMenu>
+                                                        <ContextMenu>
+                                                            <MenuItem Header="{Binding menu.HeaderMenu1}" Command="{Binding menu.BtnMenu1}" CommandParameter="{Binding}" />
+                                                            <Separator />
+                                                            <MenuItem Header="{Binding menu.HeaderMenu2}" Command="{Binding menu.BtnMenu1}" CommandParameter="{Binding}" />
+                                                            <Separator />
+                                                        </ContextMenu>
+                                                    </ListView.ContextMenu>
+
+                                                    <ListView.View>
+                                                        <GridView>
+                                                            <GridViewColumn Width="auto" DisplayMemberBinding="{Binding ContentCol1, UpdateSourceTrigger=PropertyChanged}" Header="{Binding Col1}" />
+                                                            <GridViewColumn DisplayMemberBinding="{Binding ContentCol2,UpdateSourceTrigger=PropertyChanged}" Header="{Binding Col2}" Width="auto" />
+                                                        </GridView>
+                                                    </ListView.View>
+
+                                                </ListView>
+
+                                            </Grid>
+
+
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+
+
+                        </ScrollViewer>
+                    </Grid>
+                    <Grid Margin="0,0,0,0" Height="59" Width="auto"  HorizontalAlignment="Stretch" VerticalAlignment="Bottom" RenderTransformOrigin="0.505,0.697" >
+                        <Button Content="Tạo bảng" Command="{Binding CmBtnCreateListView}" HorizontalAlignment="Left"  Width="120" Margin="10
+                    ,0,0,10
+                    "  VerticalAlignment="Bottom" Height="Auto" HorizontalContentAlignment="Left" />
+                        <Button Content="Button" Height="42" Margin="10,0,0,10" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="150"/>
+
+                    </Grid>
+                </StackPanel>
+
+            </TabItem>
+            <TabItem Header="Tab 2" />
+            <TabItem Header="Tab 3" />
+        </TabControl>
 
 
 
-                
-			</ScrollViewer>
 
-		</Grid>
-		<Grid HorizontalAlignment="Left" Height="85" Margin="10,443,0,0" Grid.Row="1" VerticalAlignment="Top" Width="941">
-			<Button Content="Button"  HorizontalAlignment="Left" Margin="730,18,0,0" VerticalAlignment="Top" Width="201" Height="42"/>
-            <Button Content="Tạo bảng" Command="{Binding CmBtnCreateListView}" HorizontalAlignment="Left" Margin="10,18,0,25" Width="108" VerticalContentAlignment="Center" Height="Auto" HorizontalContentAlignment="Left" VerticalAlignment="Center"/>
-		</Grid>
 
-	</Grid>
+
+
+    </Grid>
 </Window>
