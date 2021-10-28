@@ -16,7 +16,7 @@ using System.Diagnostics;
 
 namespace ToolBanHang.ViewModels
 {
-    class MainWindowViewModel: ViewModelBase
+    class MainWindowViewModel : ViewModelBase
     {
 
         public MainWindowViewModel()
@@ -32,8 +32,6 @@ namespace ToolBanHang.ViewModels
 
                 ListTableInListBox.Add(new ListTableInListBox
                 {
-                    Col1 = "Header Cột 1",
-                    Col2 = "Header Cột 2",
                     menu = new ContextMenuInListView
                     {
                         HeaderMenu1 = "Menu 1",
@@ -44,8 +42,11 @@ namespace ToolBanHang.ViewModels
 
                 listContent.Add(new ContentInTable() { ContentCol1 = "Abigail3", ContentCol2 = "Abigail3" });
 
-                
+
+
+
             });
+
 
             BtnLoadComboBox = new DelegateCommand<ClassComboBox>((e) =>
             {
@@ -71,9 +72,18 @@ namespace ToolBanHang.ViewModels
                 });
             });
 
+            BtnOpenForm1 = new DelegateCommand(() =>
+            {
+                Window _WindowForm1 = new WindowForm1();
+                _WindowForm1.ShowDialog();
+            });
 
-           
-
+            TbName = "Tuấn";
+            TbPhone = "0906006";
+            BtnLogin = new DelegateCommand(() =>
+            {
+                MessageBox.Show(TbName);
+            });
         }
 
         private ObservableCollection<ClassComboBox> _MyComboBox = new ObservableCollection<ClassComboBox>();
@@ -82,9 +92,6 @@ namespace ToolBanHang.ViewModels
         {
             get => _MyComboBox; set => SetProperty(ref _MyComboBox, value);
         }
-
-
-
 
         private ObservableCollection<ListTableInListBox> _ListTableInListBox = new ObservableCollection<ListTableInListBox>();
 
@@ -101,11 +108,28 @@ namespace ToolBanHang.ViewModels
             get => _ContextMenuInListView; set => SetProperty(ref _ContextMenuInListView, value);
         }
 
+        private string _TbName = "";
+        private string _TbPhone = "";
+
+        public string TbName
+        {
+            get => _TbName; set => SetProperty(ref _TbName, value);
+        }
+
+        public string TbPhone
+        {
+            get => _TbPhone; set => SetProperty(ref _TbPhone, value);
+        }
+
+
+        public ICommand BtnLogin { get; set; }
+
         public ICommand CmBtnCreateListView { get; set; }
         public ICommand BtnDeleteTable { get; set; }
         public ICommand BtnAddRowTable { get; set; }
 
         
         public ICommand BtnLoadComboBox { get; set; }
+        public ICommand BtnOpenForm1 { get; set; }
     }
 }

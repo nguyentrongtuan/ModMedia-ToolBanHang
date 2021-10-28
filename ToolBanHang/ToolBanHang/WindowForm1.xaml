@@ -1,0 +1,41 @@
+﻿<Window x:Class="ToolBanHang.WindowForm1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToolBanHang"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        mc:Ignorable="d"
+        Title="WindowForm1" Height="398.154" Width="588.428"
+        xmlns:vms="clr-namespace:ToolBanHang.ViewModels">
+    <Window.DataContext>
+        <vms:MainWindowViewModel />
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Grid.Row="0" Grid.Column="1" Text="Điền thông tin" />
+        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Họ tên" />
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="5"  Text="{Binding TbName}"  />
+        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Số điện thoại" />
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="5"  Text="{Binding TbPhone}" />
+        <Button Grid.Row="4" Grid.Column="2" Content="Đăng nhập" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding BtnLogin}" />
+    </Grid>
+</Window>

@@ -13,106 +13,245 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="297.154" Width="473.428"
+        Title="MainWindow" Height="398.154" Width="588.428"
         xmlns:vms="clr-namespace:ToolBanHang.ViewModels">
+
     <Window.DataContext>
         <vms:MainWindowViewModel />
     </Window.DataContext>
+    <Grid HorizontalAlignment="Stretch" MinHeight="240" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
-
-
-    <Grid Margin="0,0,0,0" VerticalAlignment="Top">
-
-        <TabControl HorizontalAlignment="Stretch" Width="auto" Margin="0,0,0,0" Height="auto" VerticalAlignment="Bottom">
+        <TabControl Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" Width="auto" Margin="0,0,0,0" Height="auto" VerticalAlignment="Stretch">
 
             <TabItem Header="Tab 1" Height="Auto" Margin="0" VerticalAlignment="Top">
-                <StackPanel Width="auto" Height="auto" Margin="0" VerticalAlignment="Top">
-                    <Grid Height="auto" VerticalAlignment="Top" Margin="0,0,0,0" Width="auto">
-                        <ComboBox Margin="124,18,0,78"  ItemsSource="{Binding MyComboBox}" HorizontalAlignment="Left" Width="auto" >
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel>
-                                        <TextBlock Text="{Binding Box11}"></TextBlock>
-                                        <TextBlock Margin="10" FontSize="8" Text="{Binding Box12}"></TextBlock>
-                                    </StackPanel>
-                                </DataTemplate>
+                <Grid Width="auto" Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30*" MaxHeight="40"/>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100*"></ColumnDefinition>
+                        <ColumnDefinition Width="100*"/>
+                        <ColumnDefinition Width="100*"></ColumnDefinition>
+                        <ColumnDefinition Width="100*"></ColumnDefinition>
 
-                            </ComboBox.ItemTemplate>
-                        </ComboBox>
+                    </Grid.ColumnDefinitions>
 
-                        <Label Content="ComboBox"  HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="114"/>
-                        <Button Command="{Binding BtnLoadComboBox}" HorizontalAlignment="right"  Content="Load ComboBox" Width="120" ></Button>
-                    </Grid>
+                    <Label Content="ComboBox" Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="114" Height="24"/>
+                    <ComboBox Margin="5,8" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" ItemsSource="{Binding MyComboBox}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="24" >
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Box11}"></TextBlock>
+                                    <TextBlock Margin="0" FontSize="10" Text="{Binding Box12}"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <Button Command="{Binding BtnLoadComboBox}" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="3" Content="Load ComboBox" Width="auto" MaxWidth="130" Height="Auto" Margin="5" ></Button>
+
+                    <Expander Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="auto">
+                        <Expander.Header>
+                            <Label Width="2000" FontWeight="Bold" Content="Danh sách các bảng"></Label>
+                        </Expander.Header>
+
+                        <Expander.Content>
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Width="auto" Margin="0,0,0,0" >
+
+                                <ListBox MouseDown="emptyEventHandler" MouseDoubleClick="emptyEventHandler"  Grid.Row="0" Grid.Column="0" ItemsSource="{Binding ListTableInListBox, UpdateSourceTrigger=PropertyChanged}" x:Name="ListBox_ListTable" Height="auto" Width="auto" Margin="0">
+                                    <ListBox.ItemContainerStyle>
+                                        <Style TargetType="ListBoxItem">
+                                            <EventSetter Event="MouseDown" Handler="emptyEventHandler" />
+                                            <EventSetter Event="MouseDoubleClick" Handler="emptyEventHandler" />
+                                        </Style>
+                                    </ListBox.ItemContainerStyle>
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Margin="5,10,5,5">
+
+                                                <Grid HorizontalAlignment="Stretch" Width="auto">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="2000*"/>
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Width="auto" Margin="0,0,5,5">
+                                                        <Button Content="Xóa Bảng" Command="{Binding ElementName=ListBox_ListTable, Path=DataContext.BtnDeleteTable}" CommandParameter="{Binding}" HorizontalAlignment="Right" VerticalAlignment="Top" Width="120" Height="30" />
+
+                                                        <Button Content="Thêm Hàng" Command="{Binding ElementName=ListBox_ListTable, Path=DataContext.BtnAddRowTable}" CommandParameter="{Binding}" HorizontalAlignment="Right" VerticalAlignment="Top" Width="120" Height="30" />
+                                                        <Label Width="2000" />
+                                                    </StackPanel>
+                                                    <Border BorderBrush="DarkBlue" BorderThickness="1" Grid.Row="1" Grid.Column="0" >
+                                                        <ListView Margin="5" x:Name="ListViewContentInCol" ItemsSource="{Binding ContentInCol}" Width="auto" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                                            <ListView.ContextMenu>
+                                                                <ContextMenu>
+                                                                    <MenuItem Header="{Binding menu.HeaderMenu1}" Command="{Binding menu.BtnMenu1}" CommandParameter="{Binding}" />
+                                                                    <Separator />
+                                                                    <MenuItem Header="{Binding menu.HeaderMenu2}" Command="{Binding menu.BtnMenu1}" CommandParameter="{Binding}" />
+                                                                    <Separator />
+                                                                </ContextMenu>
+                                                            </ListView.ContextMenu>
+
+                                                            <ListView.View>
+                                                                <GridView>
+                                                                    <GridView.Columns>
+                                                                        <GridViewColumn Width="auto">
+                                                                            <GridViewColumn.Header>
+                                                                                <GridViewColumnHeader Content="Header 1" Width="auto" FontWeight="Bold">
+
+                                                                                </GridViewColumnHeader>
+                                                                            </GridViewColumn.Header>
+
+                                                                            <GridViewColumn.CellTemplate>
+                                                                                <DataTemplate>
+                                                                                    <TextBox  Text="{Binding ContentCol1, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" Margin="0">
+                                                                                    </TextBox>
+
+                                                                                </DataTemplate>
+                                                                            </GridViewColumn.CellTemplate>
+                                                                        </GridViewColumn>
+
+                                                                        <GridViewColumn Width="auto">
+                                                                            <GridViewColumn.Header>
+                                                                                <GridViewColumnHeader Content="Header 2" Width="auto" FontWeight="Bold">
+                                                                                </GridViewColumnHeader>
+                                                                            </GridViewColumn.Header>
+                                                                            <GridViewColumn.CellTemplate>
+                                                                                <DataTemplate>
+                                                                                    <TextBox Text="{Binding ContentCol2, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" Margin="0">
+                                                                                    </TextBox>
+                                                                                </DataTemplate>
+                                                                            </GridViewColumn.CellTemplate>
+                                                                        </GridViewColumn>
 
 
-                    <Grid Margin="0,10,0,50" Height="auto" Width="auto">
-                        <ScrollViewer VerticalScrollBarVisibility="Auto" Width="auto" Margin="0,0,0,0" >
-                            <ListBox ItemsSource="{Binding ListTableInListBox, UpdateSourceTrigger=PropertyChanged}" x:Name="ListBox_ListTable" Height="auto" Width="auto" >
-                                <ListBox.ItemContainerStyle>
-                                    <Style TargetType="ListBoxItem">
-                                        <Style.Triggers>
-                                            <Trigger Property="Control.IsMouseOver" Value="False">
-                                                <Setter Property="Control.Background" Value="Transparent" />
+                                                                    </GridView.Columns>
 
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </ListBox.ItemContainerStyle>
-                                <ListBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <StackPanel Margin="0,0,10,0" Width="auto">
-                                            <Grid Margin="0,35,0,0"  Width="auto">
-                                                <StackPanel Orientation="Horizontal" Width="auto">
-                                                    <Button Content="Xóa Bảng" Command="{Binding ElementName=ListBox_ListTable, Path=DataContext.BtnDeleteTable}" CommandParameter="{Binding}" HorizontalAlignment="Right" VerticalAlignment="Top" Width="120" Height="30" />
-                                                    <Button Content="Thêm Hàng" Command="{Binding ElementName=ListBox_ListTable, Path=DataContext.BtnAddRowTable}" CommandParameter="{Binding}" HorizontalAlignment="Right" VerticalAlignment="Top" Width="120" Height="30" />
+                                                                </GridView>
 
-                                                </StackPanel>
+                                                            </ListView.View>
 
 
-                                                <ListView Margin="0,30,0,0" x:Name="ListViewContentInCol" ItemsSource="{Binding ContentInCol}" Width="auto">
+                                                        </ListView>
+                                                    </Border>
+                                                </Grid>
+                                            </StackPanel>
+
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
 
 
-                                                    <ListView.ContextMenu>
-                                                        <ContextMenu>
-                                                            <MenuItem Header="{Binding menu.HeaderMenu1}" Command="{Binding menu.BtnMenu1}" CommandParameter="{Binding}" />
-                                                            <Separator />
-                                                            <MenuItem Header="{Binding menu.HeaderMenu2}" Command="{Binding menu.BtnMenu1}" CommandParameter="{Binding}" />
-                                                            <Separator />
-                                                        </ContextMenu>
-                                                    </ListView.ContextMenu>
+                            </ScrollViewer>
 
-                                                    <ListView.View>
-                                                        <GridView>
-                                                            <GridViewColumn Width="auto" DisplayMemberBinding="{Binding ContentCol1, UpdateSourceTrigger=PropertyChanged}" Header="{Binding Col1}" />
-                                                            <GridViewColumn DisplayMemberBinding="{Binding ContentCol2,UpdateSourceTrigger=PropertyChanged}" Header="{Binding Col2}" Width="auto" />
-                                                        </GridView>
-                                                    </ListView.View>
+                        </Expander.Content>
+                    </Expander>
+                    <StackPanel Margin="0,0,0,0" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Expander Header="Expander 1">
+                            <Expander.Content>
+                                <Grid />
+                            </Expander.Content>
+                        </Expander>
+                    </StackPanel>
 
-                                                </ListView>
+                    <StackPanel Margin="0,0,0,0" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Expander Header="Expander 1">
+                            <Expander.Content>
+                                <Grid />
+                            </Expander.Content>
+                        </Expander>
+                    </StackPanel>
+                    <StackPanel Margin="0,0,0,0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Expander Header="Expander 1">
+                            <Expander.Content>
+                                <Grid />
+                            </Expander.Content>
+                        </Expander>
+                    </StackPanel>
+                    <StackPanel Margin="0,0,0,0" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Expander Header="Expander 1">
+                            <Expander.Content>
+                                <Grid />
+                            </Expander.Content>
+                        </Expander>
+                    </StackPanel>
 
-                                            </Grid>
+                    <Button Grid.Row="6" Grid.Column="3" Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="75" Margin="0,5" Height="30"/>
+                    <Button Grid.Row="6" Grid.Column="0" Content="Tạo bảng" Command="{Binding CmBtnCreateListView}" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="92" Margin="4,5" Height="30" />
 
-
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </ListBox.ItemTemplate>
-                            </ListBox>
-
-
-                        </ScrollViewer>
-                    </Grid>
-                    <Grid Margin="0,0,0,0" Height="59" Width="auto"  HorizontalAlignment="Stretch" VerticalAlignment="Bottom" RenderTransformOrigin="0.505,0.697" >
-                        <Button Content="Tạo bảng" Command="{Binding CmBtnCreateListView}" HorizontalAlignment="Left"  Width="120" Margin="10
-                    ,0,0,10
-                    "  VerticalAlignment="Bottom" Height="Auto" HorizontalContentAlignment="Left" />
-                        <Button Content="Button" Height="42" Margin="10,0,0,10" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="150"/>
-
-                    </Grid>
-                </StackPanel>
-
+                </Grid>
             </TabItem>
-            <TabItem Header="Tab 2" />
-            <TabItem Header="Tab 3" />
+            <TabItem Header="Tab 2">
+                <Grid Width="auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Content="Mở Dialog" Command="{Binding BtnOpenForm1}" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Tab 3">
+                <Grid Width="auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Width="auto" Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                        <Button Width="auto" HorizontalAlignment="Left" Content="Nút 1" />
+                        <Button Width="auto" HorizontalAlignment="Left" Content="Nút 2" />
+                        <Button Width="auto" HorizontalAlignment="Left" Content="Nút 3" />
+                        <Button Width="auto" HorizontalAlignment="Left" Content="Nút 4" />
+                        <Button Width="auto" HorizontalAlignment="Left" Content="Nút 5" />
+                    </StackPanel>
+                    <Expander Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="auto">
+                        <Expander.Header>
+                            <Label Width="auto" FontWeight="Bold" Content="Danh Sách TextBox"></Label>
+                        </Expander.Header>
+                        <Expander.Content>
+                            <Grid Margin="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="40" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="TextBox 1" />
+                                <TextBox Grid.Row="0" Grid.Column="1" Margin="5"  Text="TextBox 1"  />
+                                <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="TextBox 2" />
+                                <TextBox Grid.Row="1" Grid.Column="1" Margin="5"  Text="TextBox 2" />
+                               
+                            </Grid>
+                        </Expander.Content>
+                    </Expander>
+                </Grid>
+            </TabItem>
         </TabControl>
 
 

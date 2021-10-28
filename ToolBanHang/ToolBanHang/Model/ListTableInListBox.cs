@@ -19,12 +19,8 @@ namespace ToolBanHang.Model
         public ListTableInListBox()
         {
             
-
-
         }
 
-        private string _Col1 = "";
-        private string _Col2 = "";
         private ContextMenuInListView _menu;
         private ObservableCollection<ContentInTable> _ContentInCol = new ObservableCollection<ContentInTable>();
 
@@ -34,14 +30,6 @@ namespace ToolBanHang.Model
             set => SetProperty(ref _ContentInCol, value);
         }
 
-        public string Col1
-        {
-            get => _Col1; set => SetProperty(ref _Col1, value);
-        }
-        public string Col2
-        {
-            get => _Col2; set => SetProperty(ref _Col2, value);
-        }
         public ContextMenuInListView menu
         {
             get => _menu; set => SetProperty(ref _menu, value);

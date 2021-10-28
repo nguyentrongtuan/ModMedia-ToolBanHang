@@ -18,12 +18,14 @@ namespace ToolBanHang.Model
         private string _ContentCol2 = "";
         public string ContentCol1
         {
-            get => _ContentCol1; set => SetProperty(ref _ContentCol1, value);
+            get => _ContentCol1; 
+            set => SetProperty(ref _ContentCol1, value);
         }
 
         public string ContentCol2
         {
-            get => _ContentCol2; set => SetProperty(ref _ContentCol2, value);
+            get => _ContentCol2; 
+            set => SetProperty(ref _ContentCol2, value);
         }
     }
 }

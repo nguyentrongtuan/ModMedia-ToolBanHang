@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ToolBanHang.ViewModels;
+
 namespace ToolBanHang
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for WindowForm1.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class WindowForm1 : Window
     {
-        public MainWindow()
+        public WindowForm1()
         {
             InitializeComponent();
-
-        }
-
-        private void emptyEventHandler(object sender, MouseButtonEventArgs e)
-        {
-            e.Handled = true;
         }
     }
 }
