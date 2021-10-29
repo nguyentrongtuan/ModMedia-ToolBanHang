@@ -84,6 +84,8 @@ namespace ToolBanHang.ViewModels
             {
                 MessageBox.Show(TbName);
             });
+
+            SrcImgCredit = "https://4.bp.blogspot.com/-Bua0PkbS1ZE/XEWVnOW4b0I/AAAAAAAAZyQ/mEsUKkkEgLoX3b4QHYs5hVkbGmFomXtRQCLcBGAs/s1600/thetindung-diiho.jpg";
         }
 
         private ObservableCollection<ClassComboBox> _MyComboBox = new ObservableCollection<ClassComboBox>();
@@ -121,6 +123,12 @@ namespace ToolBanHang.ViewModels
             get => _TbPhone; set => SetProperty(ref _TbPhone, value);
         }
 
+        private string _SrcImgCredit = "";
+
+        public string SrcImgCredit
+        {
+            get => _SrcImgCredit; set => SetProperty(ref _SrcImgCredit, value);
+        }
 
         public ICommand BtnLogin { get; set; }
 

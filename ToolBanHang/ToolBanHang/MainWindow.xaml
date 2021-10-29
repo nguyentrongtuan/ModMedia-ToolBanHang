@@ -252,6 +252,21 @@
                     </Expander>
                 </Grid>
             </TabItem>
+            <TabItem Header="Credit">
+                <Grid Width="auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Width="auto" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Thông tin thanh toán" />
+                    <Image Grid.Row="1" Grid.Column="0" Width="360" HorizontalAlignment="Center" VerticalAlignment="Center" Height="253" Source="{Binding SrcImgCredit}" />
+                    <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Thông tin thanh toán Thông tin thanh toán " />
+                </Grid>
+            </TabItem>
         </TabControl>
 
 
