@@ -16,11 +16,11 @@ using ToolBanHang.ViewModels;
 namespace ToolBanHang
 {
     /// <summary>
-    /// Interaction logic for WindowForm1.xaml
+    /// Interaction logic for WindowShowTable.xaml
     /// </summary>
-    public partial class WindowForm1 : Window
+    public partial class WindowShowTable : Window
     {
-        public WindowForm1()
+        public WindowShowTable()
         {
             InitializeComponent();
         }

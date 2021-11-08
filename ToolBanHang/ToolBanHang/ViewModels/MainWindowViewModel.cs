@@ -21,7 +21,7 @@ namespace ToolBanHang.ViewModels
 
         public MainWindowViewModel()
         {
-
+            
 
             CmBtnCreateListView = new DelegateCommand(() =>
             {
@@ -41,9 +41,6 @@ namespace ToolBanHang.ViewModels
                 });
 
                 listContent.Add(new ContentInTable() { ContentCol1 = "Abigail3", ContentCol2 = "Abigail3" });
-
-
-
 
             });
 
@@ -72,6 +69,26 @@ namespace ToolBanHang.ViewModels
                 });
             });
 
+            BtnOpenDialogInTable = new DelegateCommand<ListTableInListBox>( (e) =>
+            {
+                Var1 = e.ContentInCol[0].ContentCol1;
+                Window _WindowShowTable = new WindowShowTable();
+                _WindowShowTable.DataContext = this;
+                _WindowShowTable.ShowDialog();
+
+            });
+
+            
+
+
+            BtnShowRow1 = new DelegateCommand<ListTableInListBox>((e) =>
+            {
+                MessageBox.Show(Var1);
+            });
+
+
+
+
             BtnOpenForm1 = new DelegateCommand(() =>
             {
                 Window _WindowForm1 = new WindowForm1();
@@ -87,13 +104,15 @@ namespace ToolBanHang.ViewModels
 
             SrcImgCredit = "https://4.bp.blogspot.com/-Bua0PkbS1ZE/XEWVnOW4b0I/AAAAAAAAZyQ/mEsUKkkEgLoX3b4QHYs5hVkbGmFomXtRQCLcBGAs/s1600/thetindung-diiho.jpg";
         }
-
+        
         private ObservableCollection<ClassComboBox> _MyComboBox = new ObservableCollection<ClassComboBox>();
 
         public ObservableCollection<ClassComboBox> MyComboBox
         {
             get => _MyComboBox; set => SetProperty(ref _MyComboBox, value);
         }
+
+        
 
         private ObservableCollection<ListTableInListBox> _ListTableInListBox = new ObservableCollection<ListTableInListBox>();
 
@@ -102,12 +121,26 @@ namespace ToolBanHang.ViewModels
             get => _ListTableInListBox; set => SetProperty(ref _ListTableInListBox, value);
         }
 
+        private ObservableCollection<ListTableInListBox> _ListTableInListBox1 = new ObservableCollection<ListTableInListBox>();
+
+        public ObservableCollection<ListTableInListBox> ListTableInListBox1
+        {
+            get => _ListTableInListBox1; set => SetProperty(ref _ListTableInListBox1, value);
+        }
+
         private ObservableCollection<ContextMenuInListView> _ContextMenuInListView = new ObservableCollection<ContextMenuInListView>();
 
 
         public ObservableCollection<ContextMenuInListView> ContextMenuInListView
         {
             get => _ContextMenuInListView; set => SetProperty(ref _ContextMenuInListView, value);
+        }
+
+        private ObservableCollection<ContentInTable> _TableInWindowShowTable = new ObservableCollection<ContentInTable>();
+
+        public ObservableCollection<ContentInTable> TableInWindowShowTable
+        {
+            get => _TableInWindowShowTable; set => SetProperty(ref _TableInWindowShowTable, value);
         }
 
         private string _TbName = "";
@@ -130,14 +163,23 @@ namespace ToolBanHang.ViewModels
             get => _SrcImgCredit; set => SetProperty(ref _SrcImgCredit, value);
         }
 
+        private string _Var1 = "";
+        public string Var1
+        {
+            get => _Var1; set => SetProperty(ref _Var1, value);
+        }
+
         public ICommand BtnLogin { get; set; }
 
         public ICommand CmBtnCreateListView { get; set; }
         public ICommand BtnDeleteTable { get; set; }
         public ICommand BtnAddRowTable { get; set; }
+        public ICommand BtnOpenDialogInTable { get; set; }
 
         
         public ICommand BtnLoadComboBox { get; set; }
         public ICommand BtnOpenForm1 { get; set; }
+        public ICommand BtnShowRow1 { get; set; }
     }
+    
 }

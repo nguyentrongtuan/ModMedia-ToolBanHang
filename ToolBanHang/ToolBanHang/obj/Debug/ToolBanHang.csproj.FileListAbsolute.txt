@@ -46,3 +46,5 @@ C:\Users\ADS 10\Source\Repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\bin\De
 C:\Users\ADS 10\source\repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\ADS 10\source\repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\WindowForm1.g.cs
 C:\Users\ADS 10\source\repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\WindowForm1.baml
+C:\Users\ADS 10\source\repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\WindowShowTable.g.cs
+C:\Users\ADS 10\source\repos\ModMedia-ToolBanHang\ToolBanHang\ToolBanHang\obj\Debug\WindowShowTable.baml

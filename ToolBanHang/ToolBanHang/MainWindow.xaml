@@ -94,6 +94,7 @@
                                                         <Button Content="Xóa Bảng" Command="{Binding ElementName=ListBox_ListTable, Path=DataContext.BtnDeleteTable}" CommandParameter="{Binding}" HorizontalAlignment="Right" VerticalAlignment="Top" Width="120" Height="30" />
 
                                                         <Button Content="Thêm Hàng" Command="{Binding ElementName=ListBox_ListTable, Path=DataContext.BtnAddRowTable}" CommandParameter="{Binding}" HorizontalAlignment="Right" VerticalAlignment="Top" Width="120" Height="30" />
+                                                        <Button Content="Mở Dialog" Command="{Binding ElementName=ListBox_ListTable, Path=DataContext.BtnOpenDialogInTable}" CommandParameter="{Binding}" HorizontalAlignment="Right" VerticalAlignment="Top" Width="120" Height="30" />
                                                         <Label Width="2000" />
                                                     </StackPanel>
                                                     <Border BorderBrush="DarkBlue" BorderThickness="1" Grid.Row="1" Grid.Column="0" >
